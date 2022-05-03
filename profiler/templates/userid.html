@@ -1,0 +1,20 @@
+<form method="GET">
+         <table id="data" class="table table-striped">
+           <thead>
+            <tr>
+               <th>ID</th>
+               <th>NAME</th>
+               <th>JOB</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in unique_customer %}
+                <tr>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+           </table>
+     </form>

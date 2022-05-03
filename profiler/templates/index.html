@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <style>
+        .todo {
+            padding: 20px;
+            margin: 10px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>FlaskTODO</h1>
+    <hr>
+    <div class="customer_Id">
+    <form method="post">
+        <p>
+            <b><label for="customer_Id">customer_Id</label></b>
+        </p>
+        <p>
+            <input type="Int" name="customer_Id"
+                placeholder="customer_Id"></input>
+        </p>
+        <p>
+            <b><label for="customer_Name">customer_Name</label></b>
+        </p>
+        <p>
+            <input type="text" name="customer_Name"
+                placeholder="customer_Name"></input>
+        </p>
+        <p>
+            <b><label for="customer_Job">customer_Job</label></b>
+        </p>
+        <p>
+            <input type="text" name="customer_Job"
+                placeholder="customer_Job"></input>
+        </p>
+        
+
+        
+        <button type="submit">Submit</button>
+    </form>
+
+     <form method="GET">
+         <table id="data" class="table table-striped">
+           <thead>
+            <tr>
+               <th>ID</th>
+               <th>NAME</th>
+               <th>JOB</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in unique_customer %}
+                <tr>
+                <td>{{ row['customer_Name'] }}</td>
+                <td>{{ row['customer_Id'] }}</td>
+                <td>{{ row['customer_Job'] }}</td>
+                <td>
+                    <input class="form__submit form__input" type="submit" value="select" name="select_song"/>
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+           </table>
+     </form>
+     
+
+    
+
+    </div>
+  </body>
+</html
