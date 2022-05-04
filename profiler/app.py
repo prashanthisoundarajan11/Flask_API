@@ -21,8 +21,13 @@ def index():
     all_todos = todos.find()
     return render_template('index.html', todos=all_todos)
 
-@app.route('/<int:user_id>',  methods=['GET'])
+@app.route('/<user_id>',  methods=['GET'])
 def get_user(user_id):
- 	details = todos.find({'customer_Id': 1})
- 	return render_template('userid.html', unique_customer=details)
+	myquery = { "customer_Id": user_id }
+	details = todos.find(myquery)
+	for detail in details:
+		print(detail)
+	return render_template('userid.html', customer=detail)
+ 	
+
 
